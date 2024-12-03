@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+</body>
+<script>
+    let jmeno = prompt("Jak se jmenujes?")
+    let zamestnani = prompt("Co delas za povolani?")
+    let vek = prompt("Kolik ti je let?")
+    document.querySelector("body").innerHTML = "<h1>" + jmeno + "</h1> <h3>" + zamestnani + "</h3>"
+    if(vek >= 18) {
+        document.querySelector("body").innerHTML += "dospely"
+    } else {
+        document.querySelector("body").innerHTML += "dite"
+    }
+</script>
+</html>

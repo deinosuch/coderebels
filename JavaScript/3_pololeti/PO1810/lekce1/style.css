@@ -1,0 +1,19 @@
+h1 {
+    color: red;
+    background: blue;
+}
+
+p {
+    padding: 15px;
+    background: green;
+}
+
+/* body {
+    margin: 0px;
+} */
+
+#centr {
+    text-align: center;
+}
+
+/* ZKRATKA NA KOMENTOVANI CTRL + / */

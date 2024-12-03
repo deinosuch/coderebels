@@ -1,0 +1,20 @@
+header{
+    background-color:grey;
+    color:white;
+    padding:100px;
+}
+
+section{
+    background-color:darkseagreen;
+    margin:50px;
+}
+
+section.modra{
+    background-color:aqua;
+    padding:20px;
+}
+
+footer{
+    background-color:blueviolet;
+    padding: 100px;
+}

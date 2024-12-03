@@ -1,0 +1,23 @@
+body {
+    margin: 0px;
+}
+
+#cerny {
+    background: black;
+}
+
+#cerveny {
+    background: rgb(255, 0, 0);
+}
+
+.sloupec {
+    height: 300px;
+    width: 40%;
+    margin: 50px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.bilytext {
+    color:white;
+}

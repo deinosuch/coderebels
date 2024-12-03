@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lekce 15</title>
+</head>
+<body>
+    <h1></h1>
+
+    <input type="number">
+
+    <button onclick="pricti()">Pricti</button>
+    <button onclick="odecti()">Odecti</button>
+
+    </br>
+
+    <h1 id="nadpis2">text</h1>
+</body>
+<script>
+
+    let pocet = 0
+    document.querySelector('h1').innerText = pocet
+
+    function pricti() {
+        document.querySelector('h1').innerText = ++document.querySelector("input").value
+    }
+
+    function odecti() {
+        document.querySelector('h1').innerText = --document.querySelector("input").value
+    }
+
+    let list = [1, 2, 3, 4, 89]
+
+    for (const item of list) {
+        document.querySelector("body").innerHTML += item + '</br>'
+        // alert(item)
+    }
+
+    document.getElementById('nadpis2').innerText = "zmena"
+
+</script>
+</html>

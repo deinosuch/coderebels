@@ -1,0 +1,47 @@
+.sidebyside{
+    display:inline-block;
+    vertical-align: top;
+}
+
+header,nav,section,footer{
+    padding:2%;
+}
+
+header, nav{
+    width:45%;
+}
+
+header{
+    background-color:darkkhaki;
+}
+
+nav{
+    background-color: darkolivegreen;
+}
+
+section{
+    background-color: darkslategray;
+}
+
+div{
+    text-align: center;
+    width: 70%;
+}
+
+footer{
+    background-color:mediumslateblue;
+    height:300px;
+}
+
+img{
+    width:25%
+}
+
+a{
+    color:red;
+}
+
+body{
+    margin: 0px;
+    font-size: larger;
+}

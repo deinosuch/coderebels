@@ -1,0 +1,16 @@
+header{
+    background-color:grey;
+}
+
+section{
+    background-color:aqua;
+    margin:50px;
+}
+
+footer, nav{
+    background-color:blueviolet;
+}
+
+footer, nav, section, header{
+    padding:50px;
+}

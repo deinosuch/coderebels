@@ -1,0 +1,22 @@
+body {
+    margin:0;
+}
+
+header, footer {
+    color: rgb(255, 255, 255);
+    background: #000;
+    margin:30px;
+}
+
+section {
+    background: #f000f0;
+    border: black solid 1px;
+}
+
+main {
+    background: red;
+    margin: 30px;
+    padding: 30px;
+}
+
+/* komentar */

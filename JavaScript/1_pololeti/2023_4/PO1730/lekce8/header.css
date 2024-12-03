@@ -1,0 +1,62 @@
+header, #section_nav, footer{
+    background-color: green;
+}
+
+nav, section{
+    background-color: purple;
+}
+
+body{
+    margin:0px;
+    color:white;
+}
+
+header, nav, section, footer{
+    padding:1%;
+}
+
+.sidebyside{
+    display:inline-block;
+    vertical-align: top;
+}
+
+#header_div, #header_nav{
+    width:48%;
+}
+
+section{
+    margin:2%;
+}
+
+#left_column{
+    width:70%;
+}
+
+#top_section{
+    height:100px;
+}
+
+#right_column{
+    width:25%;
+}
+
+#right_section{
+    height:70px;
+}
+
+#section_nav{
+    height:40px;
+}
+
+#bottom_nav{
+    text-align:center;
+}
+
+b{
+    color:orange;
+}
+
+a{
+    text-decoration:none;
+    color:white;
+}

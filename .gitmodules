@@ -1,0 +1,12 @@
+[submodule "JavaScript/3_pololeti/PO1810/to-do-list"]
+	path = JavaScript/3_pololeti/PO1810/to-do-list
+	url = git@github.com:deinosuch/to-do-list.git
+[submodule "JavaScript/2_pololeti/PO1830/repo/webovka13"]
+	path = JavaScript/2_pololeti/PO1830/repo/webovka13
+	url = git@github.com:deinosuch/webovka13.git
+[submodule "JavaScript/2_pololeti/PO1830/JavaScriptOpakovani"]
+	path = JavaScript/2_pololeti/PO1830/JavaScriptOpakovani
+	url = git@github.com:deinosuch/JavaScriptOpakovani.git
+[submodule "JavaScript/2_pololeti/projekty/ukolnicek"]
+	path = JavaScript/2_pololeti/projekty/ukolnicek
+	url = git@github.com:deinosuch/ukolnicek.git

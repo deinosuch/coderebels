@@ -1,0 +1,39 @@
+main{
+    margin:200px;
+    padding:10px;
+    background-color: rgb(180, 180, 180);
+}
+
+#card{
+    background-color: rgb(160, 160, 160);
+}
+
+main, #card{
+    width:300px;
+    height:200px;
+}
+
+img{
+    width: 80px;
+}
+
+#information, #picture{
+    display:inline-block;
+    width:145px;
+    height:195px;
+    vertical-align: top;
+    margin:1px;
+}
+
+#contact{
+    font-weight: bold;
+}
+
+h3{
+    margin:10px;
+}
+
+#picture{
+    background-color: rgb(184, 184, 184);
+    text-align: center;
+}

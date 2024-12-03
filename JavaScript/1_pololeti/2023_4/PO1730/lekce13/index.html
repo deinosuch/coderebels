@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13. lekce</title>
+    <script>
+        alert('ahoj')
+        // alert(prompt('Jak se mas?'))
+        // alert('1+2') //vypise 1+2
+        // alert(1+2) //vypise 3
+
+        // let promenna, x, cislo
+        // let text = 'ahoj'
+
+        // promenna = 9
+        // x = 12
+
+        // alert(x)
+
+        // x += 7 // to stejne jako x = x + 7 a vzhledem k tomu ze x = 12 tak je to to stejne jako x = 12 + 7
+
+        // alert(x)
+        // cislo = 1
+
+        // alert(text)
+        // alert(cislo + x)
+
+        // let soucet = promenna + x
+        // alert(soucet)
+
+        // alert(text + cislo)
+
+        // alert(text1)
+
+        // alert("Ahoj"); alert("No nazdar")
+    </script>
+
+
+    <script src="script.js"></script>
+
+
+</head>
+
+<body>
+    <h1>Nadpis</h1>
+
+    <script>
+        let vysledek = prompt("Otazka?")
+        document.querySelector("h1").innerText += " <em>z javascriptu</em>"
+        document.querySelector("h1").innerText = vysledek
+    </script>
+
+    <p>Paragraf</p>
+
+    <h2>Mensi nadpis</h2>
+
+    <script>
+        document.querySelector("p").innerHTML += " <em>z javascriptu</em>"
+
+        let odpoved = 10// prompt("Kolik ti je?") 
+
+        if (odpoved >= 0 && odpoved <= 10) { // && znamena "a zaroven"
+            // alert("Nazdar prcku")
+        } else if (odpoved == 11 || odpoved == 12) { // || znamena "nebo"
+            // alert("davej bacha")
+        } else if (!(odpoved >= 0)){ // ! znamena "pokud neplati", odpoved < 0
+            // alert("neplatne cislo")
+        } else {
+            // alert("ahoj");
+        }
+
+        if (document.querySelector("h2").innerText == "Mensi nadpis") {
+            document.querySelector("p").innerText = "nad nadpisem"
+        }
+
+    </script>
+
+</body>
+
+</html>

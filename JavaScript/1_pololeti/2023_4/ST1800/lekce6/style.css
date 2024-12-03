@@ -1,0 +1,33 @@
+section{
+    background-color: rgb(88, 125, 180);
+    margin: 30px;
+}
+
+section, header, footer{
+    padding: 20px;
+}
+
+header, footer{
+    background-color: rgb(88, 180, 174);
+    font-size: x-large;
+    font-weight:bolder;
+}
+
+body{
+    color: white;
+    margin: 0px;
+    text-align: center;
+}
+
+.sloupec{
+    display:inline-block;
+    vertical-align: top;
+}
+
+#horni{
+    width:70%;
+}
+
+#spodni{
+    width:25%;
+}

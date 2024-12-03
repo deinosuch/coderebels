@@ -1,0 +1,20 @@
+.modra{
+    background-color: rgb(0, 17, 255);
+    padding: 100px;
+    /* text-align: center; */
+}
+
+body{
+    background-color: beige;
+}
+
+section{
+    background-color: red;
+    margin: 50px;
+}
+
+img{
+    width: 200px;
+    display:flex;
+    flex-wrap: nowrap;
+}

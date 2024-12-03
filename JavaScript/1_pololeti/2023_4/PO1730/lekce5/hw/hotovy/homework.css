@@ -1,0 +1,16 @@
+header{
+    background-color: gray;
+}
+section{
+    background-color: lightgreen;
+    margin: 25px;
+}
+.bllu{
+    background-color:lightblue;
+}
+footer{
+    background-color: blueviolet;
+}
+header,.bllu,footer{
+    padding: 25px;
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Úkolníček</title>
+    <style>
+        /**
+         * html:
+         *  - světle šedé pozadí
+         *
+         * Obecně (body):
+         *  - bezpatkové písmo
+         *  - maximální šířka
+         *  - zarovnání na střed (margin: 0 auto)
+         *  - bílé pozadí
+         *
+         * Hlavička (header):
+         *  - odsazení (padding)
+         *  - podbarvení
+         *
+         * Nadpis (h1):
+         *  - zvětšit velikost písma
+         *
+         * Obsah (main):
+         *  - odsazení (padding)
+         *
+         * Patička (footer):
+         *  - tmavé pozadí
+         *  - bílé písmo
+         *  - odsazení (padding)
+         */
+        html {
+            background: #ddd;
+        }
+        body {
+            max-width: 60em;
+            margin: 0 auto;
+            font-family: sans-serif;
+        }
+        header {
+            padding: 1em 2em;
+            background: #C5CAE9;
+            border-radius: 1em 1em 0 0;
+        }
+        main {
+            padding: 1em;
+            background: white;
+        }
+        h1 {
+            font-size: 4em;
+            color: #283593;
+            margin-bottom: 0.25em;
+        }
+        .popis {
+            font-size: 1.2em;
+            font-style: italic;
+        }
+        footer {
+            padding: 1em;
+            background: #283593;
+            color: white;
+            border-radius: 0 0 1em 1em;
+        }
+        footer a {
+            color: white;
+        }
+        /**
+         * 1) Označte si každou sekci pomocí class="nazevsekce"
+         * 2) Vytvořte pravidla k jednotlivým označeným sekcím (.nazevsekce), která
+         *   a) obarvují pozadí jednotlivých sekcí
+         *   b) přidají sekci odsazení (padding)
+         */
+        section {
+            padding: 1em;
+        }
+        .skola {
+            background: #C5CAE9;
+        }
+        .doma {
+            background: #FFEBEE;
+        }
+        .seznam {
+            background: #E8F5E9;
+        }
+        .kurz {
+            background: #FFFDE7;
+        }
+        /**
+         * .splneny
+         *  - fajfka (js)
+         *  - preskrtnuty (text-decoration: line-through)
+         *  - zelene
+         *
+         * .nesplneny
+         *  - krizek (js)
+         *  - tucne
+         *  - cervene
+         *
+         * .rozpracovany
+         *  - kurzivou
+         *  - modre
+         */
+
+         .splneny{
+            color:green;
+        }
+
+        .nesplneny{
+            color:red;
+        }
+
+        .rozpracovany{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Úkolníček</h1>
+        <p class="popis">Stránka s našimi úkoly, úkoly mohou být splňené nebo ne. Úkoly jsou zařazené do kategorií.</p>
+    </header>
+    <main>
+        <section class="skola">
+            <h2>Domácí úkoly ze školy</h2>
+            <ul>
+                <li class="splneny">Z pracovního sešitu vypracujte stranu 15</li>
+                <li class="nesplneny">Vytvořte referát na téma 2. Světová válka</li>
+                <li class="rozpracovany">Opište látku z učebnice...</li>
+            </ul>
+        </section>
+        <section class="doma">
+            <h2>Domácí práce (úkoly od mámy)</h2>
+            <ul>
+                <li class="splneny">Umýt nádobí</li>
+                <li class="splneny">Zalít kytky</li>
+            </ul>
+        </section>
+        <section class="seznam">
+            <h2>Nákupní seznam</h2>
+            <ul>
+                <li class="nesplneny">1x mléko</li>
+                <li class="splneny">2x máslo</li>
+                <li class="rozpracovany">37x meloun</li>
+            </ul>
+        </section>
+        <section class="kurz">
+            <h2>Nepovinné úkoly z kurzy</h2>
+            <ul>
+                <li class="rozpracovany">Vytvořte funkci abc...</li>
+                <li class="nesplneny">Rozpracujte obsah webové stránky z minulé hodiny...</li>
+           </ul>
+       </section>
+    </main>
+    <footer>
+        <ul>
+            <li>Autor: Pavel Petržela</li>
+            <li>Vytvořeno dne: 4. 5. 2023</li>
+            <li>V případě dotazů se obraťte na email <a href="mailto:pavel@petrzela.eu">pavel@petrzela.eu</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

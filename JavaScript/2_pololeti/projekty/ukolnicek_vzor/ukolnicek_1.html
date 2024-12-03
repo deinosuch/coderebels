@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Úkolníček</title>
+    <style>
+        /**
+         * html:
+         *  - světle šedé pozadí
+         *
+         * Obecně (body):
+         *  - bezpatkové písmo
+         *  - maximální šířka
+         *  - zarovnání na střed (margin: 0 auto)
+         *  - bílé pozadí
+         *
+         * Hlavička (header):
+         *  - odsazení (padding)
+         *  - podbarvení
+         *
+         * Nadpis (h1):
+         *  - zvětšit velikost písma
+         *
+         * Obsah (main):
+         *  - odsazení (padding)
+         *
+         * Patička (footer):
+         *  - tmavé pozadí
+         *  - bílé písmo
+         *  - odsazení (padding)
+         */
+        footer {
+            /* color: white; */
+            border-radius: 0 0 1em 1em;
+        }
+        footer a {
+            /* color: white; */
+        }
+        body {
+            max-width: 62em;
+            margin: 0 auto;
+        }
+        h1 {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Úkolníček</h1>
+        <p class="popis">Stránka s našimi úkoly, úkoly mohou být splňené nebo ne. Úkoly jsou zařazené do kategorií.</p>
+    </header>
+    <main>
+        <p>Obsah...</p>
+    </main>
+    <footer>
+        <ul>
+            <li>Autor: Pavel Petržela</li>
+            <li>Vytvořeno dne: 4. 5. 2023</li>
+            <li>V případě dotazů se obraťte na email <a href="mailto:pavel@petrzela.eu">pavel@petrzela.eu</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

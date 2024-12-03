@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    let odpoved = prompt("Kolik ti je?") 
+
+    if (odpoved >= 0 && odpoved <= 10) { // && znamena "a zaroven"
+        alert("Nazdar")
+    } else if (odpoved == 11 || odpoved == 12) { // || znamena "nebo"
+        alert("davej bacha")
+    } else if (!(odpoved >= 0)){ // ! znamena "pokud neplati", odpoved < 0
+        alert("neplatne cislo")
+    } else {
+        alert("ahoj");
+    }
+
+    let list = [4, 6, 7, 89]
+
+    alert(list[0])
+
+    let dlouhej_seznam = new Array(4)
+    dlouhej_seznam[0] = 4
+    dlouhej_seznam[1] = 6
+
+</script>
+
+</html>

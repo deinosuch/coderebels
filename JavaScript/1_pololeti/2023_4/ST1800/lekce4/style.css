@@ -1,0 +1,17 @@
+section {
+    background-color: red;
+    margin: 50px;
+    /*Margin je bez background color*/
+}
+
+nav{
+    background-color: rgb(0, 255, 0);
+    padding:50px;
+    /*Padding je s background color*/
+}
+
+header{
+    background-color:blue;
+    margin:10%;
+    /*px jsou pixely a % jsou % stranky*/
+}

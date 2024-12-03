@@ -1,0 +1,18 @@
+section{
+    background-color: rgb(119, 119, 238);
+    padding: 100px;
+    /* Komentar v css */
+    /* Klavesova zkratka komentar - ctrl + / */
+    color: white;
+}
+
+header, footer{
+    background-color:rgb(92, 180, 92);
+    margin: 100px;
+}
+
+body{
+    margin: 10px;
+    color:black;
+    font-size: large;
+}

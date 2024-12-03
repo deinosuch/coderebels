@@ -1,0 +1,20 @@
+header{
+    background-color:#779e8f;
+}
+
+nav{
+    background-color:#81779e;
+}
+
+header,nav{
+    padding:1%;
+}
+
+.vedlesebe{
+    display:inline-block;
+    vertical-align:top;
+}
+
+#header{
+    width:47%;
+}
