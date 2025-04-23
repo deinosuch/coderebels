@@ -12,4 +12,4 @@
 	url = git@github.com:deinosuch/ukolnicek.git
 [submodule "JavaScript/2_pololeti/2023_4/PO1830/JavaScriptOpakovani"]
 	path = JavaScript/2_pololeti/2023_4/PO1830/JavaScriptOpakovani
-	url = https://github.com/deinosuch/JavaScriptOpakovani.git
+	url = git@github.com:deinosuch/JavaScriptOpakovani.git
