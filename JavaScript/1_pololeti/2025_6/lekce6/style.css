@@ -1,0 +1,51 @@
+/* komentar */
+/* klavesova zkratka je ctrl + /
+*  
+*  Absolutni jednotky: px (pixely) , cm, ...
+*
+*  Relativni jednotky: 
+*  % - velikost v procentech rodicovskeho tagu
+*  em - velikost fontu momentalniho tagu
+*  rem - vychozi velikost fontu
+*  vw - viewpoint width = sirka obrazovky
+*  vh - viewpoint height = vyska obrazovky
+*/
+
+body {
+  margin: 0;
+}
+
+p,
+h1 {
+  margin: 20px;
+  padding: 20px;
+  background-color: #2ef266;
+  border: 5px solid #000;
+  display: inline-block;
+  width: 35vw;
+}
+
+.paragraf_s_class {
+  color: white;
+}
+
+#druhy_paragraf {
+  font-size: 20px;
+}
+
+h1 {
+  display: inline-block;
+}
+
+main {
+  background-color: #e6e2a3;
+  height: 100%;
+}
+
+#druhy_paragraf:hover {
+  background-color: #ff0000;
+}
+
+/* * { */
+/*   height: 80px; */
+/* } */
