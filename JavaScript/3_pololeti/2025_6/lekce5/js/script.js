@@ -1,17 +1,12 @@
+const UKOLY_DB_LINK = "https://698b6e946c6f9ebe57bcaac0.mockapi.io/Ukol";
+
 let hotove_ukoly = document.getElementById("completed");
 let celkem_ukoly = document.getElementById("total");
 
-let num_hotove_ukoly = +localStorage.getItem("key_hotove_ukoly");
-let num_celkem_ukoly = +localStorage.getItem("key_celkem_ukoly");
+let num_hotove_ukoly = 0;
+let num_celkem_ukoly = 0;
 
 load_task_numbers();
-
-let tasks = {};
-if (localStorage.getItem("tasks")) {
-  tasks = JSON.parse(localStorage.getItem("tasks"));
-} else {
-  localStorage.setItem("tasks", JSON.stringify(tasks));
-}
 
 let task_name_input = document.getElementById("task-to-add");
 let add_task_button = document.querySelector(".button");
@@ -21,14 +16,11 @@ let task_container = document.querySelector(".container");
 function load_task_numbers() {
   // funkce, ktera na stranku nacte momentalni pocet hotovych a celkem ukolu
 
-  localStorage.setItem("key_hotove_ukoly", num_hotove_ukoly);
-  localStorage.setItem("key_celkem_ukoly", num_celkem_ukoly);
-
   hotove_ukoly.innerHTML = num_hotove_ukoly;
   celkem_ukoly.innerHTML = num_celkem_ukoly;
 }
 
-function checkbox_implementation(novy_ukol) {
+function checkbox_implementation(novy_ukol, id) {
   let checkbox = novy_ukol.querySelector("input");
   let nazev = novy_ukol.querySelector("p").innerHTML;
   checkbox.addEventListener("click", () => {
@@ -39,18 +31,17 @@ function checkbox_implementation(novy_ukol) {
       tasks[nazev] = false;
       num_hotove_ukoly -= 1;
     }
-    localStorage.setItem("tasks", JSON.stringify(tasks));
     load_task_numbers();
   });
 }
 
-function delete_implementation(novy_ukol) {
+function delete_implementation(novy_ukol, id) {
   let delete_button = novy_ukol.querySelector("i");
   delete_button.addEventListener("click", () => {
     if (confirm("Opravdu chces smazat tento ukol?")) {
-      let nazev = novy_ukol.querySelector("p").innerHTML;
-      delete tasks[nazev];
-      localStorage.setItem("tasks", JSON.stringify(tasks));
+      fetch(`${UKOLY_DB_LINK}/${id}`, {
+        method: "DELETE",
+      });
 
       novy_ukol.remove();
       num_celkem_ukoly -= 1;
@@ -66,49 +57,66 @@ function delete_implementation(novy_ukol) {
   });
 }
 
-function pridat_ukol(nazev, existing) {
+function pridat_ukol(task_obj, existing) {
   let novy_ukol = document.querySelector(".task-template").cloneNode(true);
-  novy_ukol.querySelector("p").innerHTML = nazev;
+  novy_ukol.querySelector("p").innerHTML = task_obj["ukol"];
   novy_ukol.classList.remove("task-template");
   task_container.appendChild(novy_ukol);
 
   if (!existing) {
     // Pokud nas ukol uz existuje v local storage tak ho tam znovu neukladat
 
-    tasks[nazev] = false;
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    fetch(UKOLY_DB_LINK, {
+      method: "POST",
+      header: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(task_obj),
+    });
+    // TODO: dodelat zjistit id
 
     num_celkem_ukoly += 1;
     load_task_numbers();
-  } else if (tasks[nazev]) {
-    // Pokud ukol existuje v local storage a zaroven je tam ulozeny jako splneny, tak zaskrntout checkbox
+  } else if (task_obj["hotovy"]) {
+    // Pokud ukol existuje v databazi a zaroven je tam ulozeny jako splneny, tak zaskrntout checkbox
 
     let checkbox = novy_ukol.querySelector("input");
     checkbox.checked = true;
   }
 
-  checkbox_implementation(novy_ukol);
-  delete_implementation(novy_ukol);
+  checkbox_implementation(novy_ukol, task_obj["id"]);
+  delete_implementation(novy_ukol, task_obj["id"]);
 }
 
-add_task_button.addEventListener("click", () => {
-  pridat_ukol(task_name_input.value, false);
+function pridat_novy_ukol() {
+  let task_obj = {
+    ukol: task_name_input.value,
+    hotovy: false,
+  };
+  pridat_ukol(task_obj, false);
   task_name_input.value = "";
-});
+}
+
+add_task_button.addEventListener("click", pridat_novy_ukol);
 
 task_name_input.onkeyup = (e) => {
   if (e.keyCode == 13) {
     // 13 je kod klavesy ENTER
-    pridat_ukol(task_name_input.value, false);
-    task_name_input.value = "";
+    pridat_novy_ukol();
   }
 };
 
-for (let task in tasks) {
-  pridat_ukol(task, true);
+async function nacti_tasks() {
+  let response = await fetch(UKOLY_DB_LINK);
+  let tasks = await response.json();
+
+  for (let task of tasks) {
+    pridat_ukol(task, true);
+  }
 }
 
+nacti_tasks();
+
 document.getElementById("delete_all").addEventListener("click", () => {
-  localStorage.clear();
   location.reload();
 });

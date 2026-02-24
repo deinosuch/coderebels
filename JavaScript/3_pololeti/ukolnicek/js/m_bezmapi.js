@@ -32,14 +32,12 @@ const storeTask = () => {
   localStorage.setItem("tasks", JSON.stringify(taskContainer.innerHTML));
 };
 
-async function getTasksfromStore() {
-  let response = await fetch(
-    "https://698b6e946c6f9ebe57bcaac0.mockapi.io/Ukol",
-  );
-  let tasks = await response.json();
-  console.log(tasks);
-  renderTasksfromStore(tasks);
-}
+const getTasksfromStore = () => {
+  if (localStorage.getItem("tasks")) {
+    let tasks = JSON.parse(localStorage.getItem("tasks"));
+    renderTasksfromStore(tasks);
+  }
+};
 
 const renderTasksfromStore = (tasks) => {
   taskContainer.innerHTML = tasks;
