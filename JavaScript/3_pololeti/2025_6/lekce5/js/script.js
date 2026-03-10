@@ -14,23 +14,31 @@ let add_task_button = document.querySelector(".button");
 let task_container = document.querySelector(".container");
 
 function load_task_numbers() {
-  // funkce, ktera na stranku nacte momentalni pocet hotovych a celkem ukolu
-
   hotove_ukoly.innerHTML = num_hotove_ukoly;
   celkem_ukoly.innerHTML = num_celkem_ukoly;
 }
 
-function checkbox_implementation(novy_ukol, id) {
+function checkbox_implementation(novy_ukol, task_obj) {
   let checkbox = novy_ukol.querySelector("input");
-  let nazev = novy_ukol.querySelector("p").innerHTML;
   checkbox.addEventListener("click", () => {
     if (checkbox.checked) {
-      tasks[nazev] = true;
+      // zaklikavame ze je hotovy
+      task_obj["hotovy"] = true;
       num_hotove_ukoly += 1;
     } else {
-      tasks[nazev] = false;
+      // odklikavame
+      task_obj["hotovy"] = false;
       num_hotove_ukoly -= 1;
     }
+
+    fetch(`${UKOLY_DB_LINK}/${task_obj["id"]}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(task_obj),
+    });
+
     load_task_numbers();
   });
 }
@@ -57,34 +65,37 @@ function delete_implementation(novy_ukol, id) {
   });
 }
 
-function pridat_ukol(task_obj, existing) {
+async function pridat_ukol(task_obj, existing) {
   let novy_ukol = document.querySelector(".task-template").cloneNode(true);
   novy_ukol.querySelector("p").innerHTML = task_obj["ukol"];
   novy_ukol.classList.remove("task-template");
   task_container.appendChild(novy_ukol);
+  num_celkem_ukoly++;
 
   if (!existing) {
-    // Pokud nas ukol uz existuje v local storage tak ho tam znovu neukladat
+    console.log(task_obj);
 
-    fetch(UKOLY_DB_LINK, {
+    let response = await fetch(UKOLY_DB_LINK, {
       method: "POST",
-      header: {
+      headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(task_obj),
     });
-    // TODO: dodelat zjistit id
 
-    num_celkem_ukoly += 1;
-    load_task_numbers();
+    task_obj = await response.json();
+
+    console.log(task_obj);
   } else if (task_obj["hotovy"]) {
     // Pokud ukol existuje v databazi a zaroven je tam ulozeny jako splneny, tak zaskrntout checkbox
 
     let checkbox = novy_ukol.querySelector("input");
     checkbox.checked = true;
+    num_hotove_ukoly++;
   }
 
-  checkbox_implementation(novy_ukol, task_obj["id"]);
+  load_task_numbers();
+  checkbox_implementation(novy_ukol, task_obj);
   delete_implementation(novy_ukol, task_obj["id"]);
 }
 
