@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+}
+
+#flag {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+#top {
+  background-color: #00b5e2;
+  grid-column: 1 / 4;
+}
+
+#mid {
+  background-color: #ef3340;
+  color: white;
+  font-size: 30vh;
+}
+
+#end {
+  background-color: #009e49;
+}

@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  text-align: center;
+  background: #42d7d7;
+  background: linear-gradient(40deg, #42d7d7 0%, #02ffb4 36%, #006cff 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 1vmin);
+  color: white;
+}
+
+.search {
+  border: #fff;
+  outline: none;
+  padding: 10px;
+  margin: 0 0 5rem 0;
+  width: 85%;
+  line-height: 30px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.card-list {
+  width: 85vw;
+  margin: 0 auto 10rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(-40deg, #42d7d7 0%, #02ffb4 100%);
+  border-radius: 5px;
+  padding: 25px;
+  cursor: pointer;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  /* transform: translateZ(0); */
+  /* transition: transform 0.25s ease-out; */
+}
+
+.template {
+  display: none;
+}
+
+.header {
+  margin: 4rem 0 2rem;
+}
+
+.card-container:hover {
+  /* transform: scale(1.05); */
+}
+
+.card-container .monster-img {
+  width: 70%;
+  margin: auto;
+  height: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .card-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  .card-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+  .card-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

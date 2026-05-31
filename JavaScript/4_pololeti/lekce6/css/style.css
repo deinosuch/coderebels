@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+}
+
+#grid {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 50px;
+}
+
+/* div div { */
+/*   border: 3px solid #00f0ff; */
+/* } */
+
+#modra {
+  background-color: blue;
+}
+
+#cervena {
+  background-color: red;
+}
+
+#zelena {
+  background-color: green;
+}
+
+#cerna {
+  background-color: #000;
+  grid-column: 1/3;
+  grid-row: 1;
+}
+
+#bila {
+  grid-column: 2 / 4;
+  grid-row: 2;
+}
+
+#fialova {
+  background-color: purple;
+  grid-column: 3;
+  grid-row: 1;
+}
+
+#flag {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 100px;
+}
+
+#bl {
+  background-color: #002d62;
+}
+
+#rd {
+  background-color: #ce1126;
+}

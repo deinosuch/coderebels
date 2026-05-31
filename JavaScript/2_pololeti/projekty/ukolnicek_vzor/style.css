@@ -1,0 +1,25 @@
+body {
+  margin: 0 auto;
+  max-width: 40em;
+  font-family: sans-serif;
+  background-color: pink;
+}
+
+#stranka {
+  background-color: white;
+  padding: 100px;
+  margin: 50px;
+  border: 10px solid #000;
+  border-radius: 100px;
+}
+
+/* 
+* rychle opacko na listy:
+*
+* 3 hlavni tagy:
+*
+* ol = ordered list (serazeny list)
+* ul = unordered list (neserazeny list)
+*
+* li = list item (prvek listu)
+*/

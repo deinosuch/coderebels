@@ -1,0 +1,25 @@
+.card-container:hover {
+  transform: scale(1.1);
+}
+
+.card-container {
+  transition: transform 0.25s ease-out;
+}
+
+@media screen and (max-width: 600px) {
+  .card-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  .card-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+  .card-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

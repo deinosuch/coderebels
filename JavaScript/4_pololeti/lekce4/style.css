@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+}
+
+p {
+  background-color: #bf57cf;
+  padding: 10px;
+  /* flex-basis: 200px; */
+  /* margin: 10px; */
+  /* flex: 1; */
+  border: 1px solid #000;
+}
+
+.vetsi {
+  /* 
+* upravit jak moc se zvetsuji nejaky prvky oproti ostatnim: 
+* flex-grow
+* ciselne hodnoty (2 se zvetsuje 2x vic nez 1)
+*
+* flex-shrink podobny akorat jak moc se zmensuji prvky
+*
+* flex-basis puvodni velikost pred zvetsovanim/zmensovanim
+* */
+  /* flex: 1; */
+}
+
+.container {
+  height: 100vh;
+  background-color: #58caed;
+  display: flex;
+  /* 
+* zmenit smer:
+* flex-direction
+* moznosti: row, row-reverse (naopak), column, column-reverse
+* */
+
+  flex-direction: column;
+
+  /* 
+* upravit rozmisteni prvku primarniho smeru (column nebo row):
+* justify-content
+* moznosti:
+* flex-start (automaticka), center, flex-end, space-between, space-around, space-evenly
+* */
+
+  justify-content: space-evenly;
+
+  /* 
+* upravit smer sekundarniho smeru:
+* align-items
+* moznosti:
+* stretch, center, flex-start, flex-end
+* */
+
+  align-items: center;
+
+  /* 
+* posouvani moc velkych prvku na dalsi radek:
+* flex-wrap 
+* moznosti:
+* nowrap, wrap, wrap-reverse
+* */
+
+  /* flex-wrap: wrap; */
+}
+
+#centr {
+  padding: 10px;
+  background-color: #de5454;
+}
+
+.center-cont {
+  height: 100vh;
+  background-color: #cede54;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* francouzska vlajka
+/* .flag { */
+/*   height: 100vh; */
+/*   display: flex; */
+/* } */
+/**/
+/* .flag div { */
+/*   flex-grow: 1; */
+/* } */
+/**/
+/* #left { */
+/*   background-color: blue; */
+/* } */
+/**/
+/* #right { */
+/*   background-color: red; */
+/* } */
+
+.flag {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.edge {
+  flex: 10;
+  background-color: #abcae9;
+}
+
+.inner {
+  flex: 1;
+}
+
+#center {
+  flex: 3;
+  background-color: black;
+}

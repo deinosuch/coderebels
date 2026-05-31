@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiplication Table Generator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        color: #222;
+        margin: 0;
+        padding: 2rem;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      h1 {
+        margin-bottom: 1rem;
+      }
+
+      .controls {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 1.5rem;
+      }
+
+      .controls label {
+        font-weight: bold;
+      }
+
+      .controls input {
+        padding: 0.5rem;
+        width: 80px;
+      }
+
+      .controls button {
+        padding: 0.6rem 1rem;
+        border: none;
+        background: #006d77;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .controls button:hover {
+        background: #00525a;
+      }
+
+      .table-wrap {
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+      }
+
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 0.75rem;
+        text-align: center;
+      }
+
+      thead th {
+        background: #dfeff1;
+      }
+
+      tbody th {
+        background: #e8f6f7;
+      }
+
+      tbody tr:nth-child(even) td {
+        background: #fafafa;
+      }
+
+      td:hover,
+      th:hover {
+        background: #cfe8eb;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Multiplication Table Generator</h1>
+
+      <div class="controls">
+        <div>
+          <label for="rows">Rows:</label>
+          <input type="number" id="rows" min="1" max="20" value="10" />
+        </div>
+
+        <div>
+          <label for="cols">Columns:</label>
+          <input type="number" id="cols" min="1" max="20" value="10" />
+        </div>
+
+        <button id="generateBtn">Generate Table</button>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead id="tableHead"></thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      const rowsInput = document.getElementById("rows");
+      const colsInput = document.getElementById("cols");
+      const generateBtn = document.getElementById("generateBtn");
+      const tableHead = document.getElementById("tableHead");
+      const tableBody = document.getElementById("tableBody");
+
+      function generateTable(rows, cols) {
+        tableHead.innerHTML = "";
+        tableBody.innerHTML = "";
+
+        const headerRow = document.createElement("tr");
+
+        const topLeftCell = document.createElement("th");
+        topLeftCell.textContent = "×";
+        headerRow.appendChild(topLeftCell);
+
+        for (let col = 1; col <= cols; col++) {
+          const th = document.createElement("th");
+          th.textContent = col;
+          headerRow.appendChild(th);
+        }
+
+        tableHead.appendChild(headerRow);
+
+        for (let row = 1; row <= rows; row++) {
+          const tr = document.createElement("tr");
+
+          const rowHeader = document.createElement("th");
+          rowHeader.textContent = row;
+          tr.appendChild(rowHeader);
+
+          for (let col = 1; col <= cols; col++) {
+            const td = document.createElement("td");
+            td.textContent = row * col;
+            tr.appendChild(td);
+          }
+
+          tableBody.appendChild(tr);
+        }
+      }
+
+      generateBtn.addEventListener("click", () => {
+        const rows = parseInt(rowsInput.value, 10);
+        const cols = parseInt(colsInput.value, 10);
+        generateTable(rows, cols);
+      });
+
+      generateTable(10, 10);
+    </script>
+  </body>
+</html>
